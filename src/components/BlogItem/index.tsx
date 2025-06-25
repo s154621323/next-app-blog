@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { BlogItem as BlogItemType } from '@/types'
 
 const BlogItem = ({
@@ -7,9 +8,13 @@ const BlogItem = ({
   date,
   excerpt,
   imageUrl,
+  id,
 }: BlogItemType) => {
   return (
-    <div className="group rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg cursor-pointer">
+    <Link
+      href={`/${id}`}
+      className="group rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg cursor-pointer"
+    >
       <div className="relative h-48 overflow-hidden">
         <Image
           src={imageUrl}
@@ -31,7 +36,7 @@ const BlogItem = ({
           阅读更多 &rarr;
         </button>
       </div>
-    </div>
+    </Link>
   )
 }
 
