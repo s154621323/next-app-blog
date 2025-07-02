@@ -5,7 +5,7 @@ import { blogPosts } from '@/mock'
 import styles from './page.module.css'
 
 interface BlogPostPageProps {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
